@@ -1,21 +1,14 @@
 export default () => {
   const container = document.createElement('div');
   const template = `
-       <div class="box">    
-        <h2>login</h2>
-        <form>
-          <div class="inputBox">
-            <input type= "text" name="name">
-            <label for ="">Nome</label>
-          </div>
-          <div class="inputBox">
-            <input type= "password" name="Password">
-            <label for ="">senha</label>
-          </div>
-         <input type= "submit" value="Entrar">
-        </form>
-       </div>
-       `;
+    <form method="post" class = "form-login flex-direction">
+      <h2>Login</h2>
+      <input type="email" placeholder="seu@email.com" class="login-area font-size" id="email-area" name="email-area" requered>
+      <input type="password" placeholder="Senha" class="login-area font-size" id="password-area" name="password-area" requered>
+      <button class="btn-sign-in font-size" id="btn-sign-in">Entrar</button>
+      <button class="btn-recover-password font-size" id="btn-recover-password">Esqueci minha senha</button>                
+     </form>
+        `;
   container.innerHTML = template;
   return container;
 };

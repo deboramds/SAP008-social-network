@@ -1,5 +1,5 @@
-import login from './lib/pages/login/index.js';
-import home from './lib/pages/home/index.js';
+import cadastro from './lib/pages/login/index.js';
+import login from './lib/pages/home/index.js';
 
 const main = document.querySelector('#root');
 
@@ -7,20 +7,20 @@ function init() {
   window.addEventListener('hashchange', () => {
     main.innerHTML = '';
     switch (window.location.hash) {
+      case '#cadastro':
+        main.appendChild(cadastro());
+        break;
       case '#login':
         main.appendChild(login());
         break;
-      case '#home':
-        main.appendChild(home());
-        break;
       default:
-        main.appendChild(login());
+        main.appendChild(cadastro());
         break;
     }
   });
 }
 
 window.addEventListener('load', () => {
-  main.appendChild(login());
+  main.appendChild(cadastro());
   init();
 });
