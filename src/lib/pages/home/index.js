@@ -1,3 +1,5 @@
+import { loadPartialConfigAsync } from '@babel/core';
+
 export default () => {
   const container = document.createElement('div');
   const template = `
@@ -7,8 +9,12 @@ export default () => {
       <input type="password" placeholder="Senha" class="login-area font-size" id="password-area" name="password-area" requered>
       <button class="btn-sign-in font-size" id="btn-sign-in">Entrar</button>
       <button class="btn-recover-password font-size" id="btn-recover-password">Esqueci minha senha</button>                
-     </form>
+    </form>
         `;
   container.innerHTML = template;
+  container.querySelector('#btn-sign-in').container.addEventListener('click', (e) => {
+    const inputEmail = container.querySelector('#email-area').value;
+    const inputPassword = container.querySelector('#password-area').value;
+  )
   return container;
 };
