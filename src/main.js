@@ -1,4 +1,4 @@
-import cadastro from './lib/pages/login/index.js';
+import cadastro from './lib/pages/cadastro/index.js';
 import login from './lib/pages/home/index.js';
 
 const main = document.querySelector('#root');
