@@ -1,3 +1,5 @@
+import { createUser } from "../../../configurafirebase/exports";
+
 export default () => {
   const container = document.createElement('div')
   const template = `
