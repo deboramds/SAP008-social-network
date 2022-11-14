@@ -1,5 +1,3 @@
-import { loadPartialConfigAsync } from '@babel/core';
-
 export default () => {
   const container = document.createElement('div');
   const template = `
