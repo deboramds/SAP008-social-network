@@ -15,6 +15,7 @@ export default () => {
   container.querySelector('#btn-sign-in').container.addEventListener('click', (e) => {
     const inputEmail = container.querySelector('#email-area').value;
     const inputPassword = container.querySelector('#password-area').value;
-  )
+    const invalidFormat = /\S+@\S+\.\S+/.test(inputEmail);
+  });
   return container;
 };
