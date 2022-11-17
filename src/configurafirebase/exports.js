@@ -1,11 +1,12 @@
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'; // eslint-disable-line import/no-unresolved
+import { app } from './configfirebase.js';
 
-const auth = getAuth();
+const auth = getAuth(app);
 
 export const createUser = (user, email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      console.log("deu certo")
+      console.log('deu certo')
     })
     .catch((error) => {
       console.log(error)
