@@ -1,4 +1,4 @@
-import { createUser } from "../../../configurafirebase/exports";
+import { createUser } from "../../../configurafirebase/exports.js";
 
 export default () => {
   const container = document.createElement('div')
