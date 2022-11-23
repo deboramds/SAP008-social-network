@@ -2,3 +2,61 @@
     background-color: black;
 }
 
+.btn-about {
+    position: absolute;
+    top: 0;
+    right: 1px;
+  }
+  .form-login {
+    background-color: var(--lilac);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+  }
+  
+  .flex-direction {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 80%;
+    margin: 0 auto 0 auto;
+  }
+  
+  .login-area,
+  .btn-sign-in,
+  .btn-recover-password {
+    background-color: var(--off-white);
+    border-radius: 10px;
+    box-shadow: var(--black) 10px 10px 15px -8px;
+    font-size: 15px;
+    margin: 3% 5%;
+    padding-left: 10px;
+    height: 40px;
+    width: 90%;
+    flex: 2 2 90%;
+  }
+  
+  .btn-google {
+    background: var(--mustard);
+    border-radius: 10px;
+    flex: 2 2 150px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--black) 10px 10px 15px -8px;
+    height: 6vh;
+    width: 60%;
+  }
+  
+  .btn-sign-in:hover,
+  .btn-recover-password:hover,
+  .btn-google:hover {
+    cursor: pointer;
+    background: var(--mustard);
+  }
+  
+  .error {
+    height: 10px;
+    display: none;
+    color: var(--red-error);
+  }
+    
