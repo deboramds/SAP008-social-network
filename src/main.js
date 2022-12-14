@@ -13,7 +13,7 @@ function redirectAuthUser(user) {
   }
 }
 
-function init() {
+async function init() {
   main.innerHTML = '';
   switch (window.location.hash) {
     case '#cadastro':
@@ -23,7 +23,7 @@ function init() {
       main.appendChild(login());
       break;
     case '#feed':
-      main.appendChild(feed());
+      main.appendChild(await feed());
       break;
     default:
       main.appendChild(login());

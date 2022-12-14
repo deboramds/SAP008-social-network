@@ -40,7 +40,7 @@ export default () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        console.log(user.displayName);
+       console.log(user.displayname);
         window.location.hash = '#feed';
       })
       .catch((error) => {
