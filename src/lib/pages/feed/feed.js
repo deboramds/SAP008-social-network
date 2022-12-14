@@ -1,6 +1,7 @@
+import { createPost, getPosts } from '../../../configurafirebase/configfirestore.js';
 import { userStateLogout, userStateChanged } from '../../../configurafirebase/exports.js';
 
-export default () => {
+export default async () => {
   const container = document.createElement('div');
   const template = `
         <textarea id="textstory" placeholder= "escreva seu post"></textarea>
@@ -23,12 +24,13 @@ export default () => {
   botaoPostar.addEventListener('click', postar);
   function postar() {
     console.log(textoPost.value);
+    createPost(textoPost.value);
     postArea.innerHTML += `
         <h1>${textoPost.value}</h1>    
-        <!--<p>${user.displayName}</p>-->
     `
   }
 
- 
+  const posts = await getPosts();
+  console.log(posts)
   return container;
 };
