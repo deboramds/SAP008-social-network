@@ -3,6 +3,9 @@ import { loginEmailPassword, signInGoogle } from '../../../configurafirebase/exp
 export default () => {
   const container = document.createElement('div');
   const template = `
+  <figure class="box-slogan-page-login">
+  <img src="./imagem/vibes.png" alt="Logotype" class="logo-icon-page-login">
+</figure>  
     <form class = "form-login flex-direction">
       <p id="msgErro"></p>
       <h2>Login</h2>
