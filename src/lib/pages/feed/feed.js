@@ -1,20 +1,25 @@
 import { createPost, getPosts } from '../../../configurafirebase/configfirestore.js';
 import { userStateLogout, userStateChanged } from '../../../configurafirebase/exports.js';
 
+
 export default async () => {
   const container = document.createElement('div');
   const template = `
-        <textarea id="textstory" placeholder= "escreva seu post"></textarea>
-        <button id="submit">Postar</button> 
-        <button id="logout">sair</button>
-        <div id="postcontainer"></div>
-       `;
+  <div class = "container-feed">
+    <div class = "input-post">
+      <textarea id="textstory" placeholder="escreva seu post"></textarea>
+      <button id="submit">Postar</button>
+    </div> 
+    <button id="logout">sair</button>
+    <div id="postcontainer"></div>
+    </div>
+  `;
   container.innerHTML = template;
   const botaoSair = container.querySelector('#logout');
   const botaoPostar = container.querySelector('#submit');
   const textoPost = container.querySelector('#textstory');
   const postArea = container.querySelector('#postcontainer');
-  // eslint-disable-next-line no-use-before-define
+
   botaoSair.addEventListener('click', deslogar);
   function deslogar() {
     console.log('deslogar');
@@ -22,15 +27,23 @@ export default async () => {
   }
 
   botaoPostar.addEventListener('click', postar);
-  function postar() {
+  async function postar() {
     console.log(textoPost.value);
-    createPost(textoPost.value);
+    await createPost(textoPost.value);
     postArea.innerHTML += `
-        <h1>${textoPost.value}</h1>    
-    `
+      <h1>${textoPost.value}</h1>    
+    `;
+    textoPost.value = '';
   }
 
   const posts = await getPosts();
-  console.log(posts)
+  console.log(posts);
+  for (const post of posts) {
+    postArea.innerHTML += `
+      <h1>${post.title}</h1>
+    `;
+  }
+
   return container;
 };
+

@@ -1,3 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: #331E38;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+img{
+  width: 80%;
+}
+
+.container-form{
+  /* background-color:aqua; */
+}
+
+.header-desktop{
+  background-color: tomato;
+}
 
 .box-slogan-page-login {
   display: flex;
@@ -7,7 +33,6 @@
 }
 
 .form-login{
-  background: linear-gradient(30deg, rgb(12, 11, 11) 52%, rgb(57, 68, 165) 100%);
   border-radius: 10px;
   text-align: center;
   padding: 10px 0 10px 0;
@@ -20,17 +45,16 @@
   width: 80%;
   margin: 0 auto 0 auto;
 }
-.login-area,
-.btn-sign-in,
-.btn-recover-password {
-  background-color: var(--off-white);
+.email-area, .pwd-area {
+  background-color: #F1ECCE;
+  color: #3a606e;
+  border: none;
   border-radius: 10px;
-  box-shadow: var(--black) 10px 10px 15px -8px;
   font-size: 15px;
-  margin: 3% 5%;
-  padding-left: 10px;
+  margin: 1rem;
+  padding: 0px 8px 0px 8px;
   height: 40px;
-  width: 90%;
+  width: 70%;
   flex: 2 2 90%;
 }
 
@@ -44,10 +68,6 @@
   text-align: center;
   margin: 1% auto;
   display: block;
-}
-
-.header-desktop {
-  display: none;
 }
 
 a:link {

@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container-feed{
+    width: 100%;
+    height: 100vh;
+    background-color: #331E38;
+  }
+
+  .input-post {
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+  }
+
+#textstory{
+    width: 500px;
+    height: 150px;
+}

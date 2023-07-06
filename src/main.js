@@ -16,11 +16,11 @@ function redirectAuthUser(user) {
 async function init() {
   main.innerHTML = '';
   switch (window.location.hash) {
-    case '#cadastro':
-      main.appendChild(cadastro());
-      break;
     case '#login':
       main.appendChild(login());
+      break;
+    case '#cadastro':
+      main.appendChild(cadastro());
       break;
     case '#feed':
       main.appendChild(await feed());

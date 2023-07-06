@@ -3,14 +3,14 @@ import { loginEmailPassword, signInGoogle } from '../../../configurafirebase/exp
 export default () => {
   const container = document.createElement('div');
   const template = `
-  <figure class="box-slogan-page-login">
-  <img src="./imagem/vibes.png" alt="Logotype" class="logo-icon-page-login">
-</figure>  
+  <section class = "container">
+    <img src = "./imagem/logo.png" alt ="logo">
+    <section class = "container-form"
     <form class = "form-login flex-direction">
       <p id="msgErro"></p>
-      <h2>Login</h2>
-      <input type="email" placeholder="seu@email.com" class="login-area font-size" id="email" name="email-area" requered>
-      <input type="password" placeholder="Senha" class="login-area font-size" id="password" name="password-area" requered>
+  
+      <input type="email" placeholder="seu@email.com" class="email-area" id="email" name="email-area" requered>
+      <input type="password" placeholder="Senha" class="pwd-area" id="password" name="password-area" requered>
       <button class="btn-sign-in font-size" id="btn-sign-in">Entrar</button>
       <button class="btn-recover-password font-size" id="btn-recover-password">Esqueci minha senha</button> 
     </form>
@@ -24,9 +24,11 @@ export default () => {
         Ainda não tem conta? <a href="#cadastro" id="click-register">Cadastre-se</a>
       </p>
     </section>
-  </section>
-  <section class="header-desktop">
+
+  <footer class="header-desktop">
     <a href="#about">Sobre Guest star Supernova</a>
+  </footer>
+  
   </section>
         `;
   container.innerHTML = template;
