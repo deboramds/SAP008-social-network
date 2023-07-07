@@ -40,10 +40,11 @@ export default async () => {
   console.log(posts);
   for (const post of posts) {
     postArea.innerHTML += `
-      <h1>${post.title}</h1>
+      <h1>${post.textoPost}</h1>
+        <button class="delete-btn">Deletar</button>
+      <button class="like-btn">Curtir</button>
     `;
   }
-
+  
   return container;
 };
-

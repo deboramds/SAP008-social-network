@@ -21,7 +21,6 @@ export const getPosts = async () =>{
         posts.push({id:doc.id, ...doc.data()});
     });
     return posts;
-
-
 }
+
 
