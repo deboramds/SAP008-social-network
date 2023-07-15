@@ -1,4 +1,4 @@
-import { collection, addDoc, getFirestore, getDocs, deleteDoc, doc } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
+import { collection, addDoc, getFirestore, getDocs, deleteDoc, doc, updateDoc } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 import { app } from './configfirebase.js';
 
 export const db = getFirestore(app);
@@ -11,6 +11,7 @@ export const createPost = async (textoPost) => {
   try {
     const docRef = await addDoc(collection(db, 'posts'), {
       textoPost: textoPost,
+      likes: 0 // Adicionando o campo "likes" com valor inicial de 0
     });
     console.log('Document written with ID: ', docRef.id);
   } catch (error) {
@@ -41,5 +42,13 @@ export const deletePost = async (postId) => {
   }
 };
 
-
+export const updateLikes = async (postId, likesCount) => {
+  try {
+    const postRef = doc(db, 'posts', postId);
+    await updateDoc(postRef, { likes: likesCount });
+    console.log('Likes updated successfully:', likesCount);
+  } catch (error) {
+    console.error('Error updating likes:', error);
+  }
+};
 

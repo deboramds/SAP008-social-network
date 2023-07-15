@@ -2,6 +2,7 @@ import cadastro from './lib/pages/cadastro/cadastro.js';
 import login from './lib/pages/home/home.js';
 import feed from './lib/pages/feed/feed.js';
 import { userStateChanged } from './configurafirebase/exports.js';
+import about from './lib/pages/about/about.js';
 
 const main = document.querySelector('#root');
 
@@ -21,6 +22,9 @@ async function init() {
       break;
     case '#cadastro':
       main.appendChild(cadastro());
+      break;
+      case '#about':
+      main.appendChild(about());
       break;
     case '#feed':
       main.appendChild(await feed());
