@@ -52,3 +52,12 @@ export const updateLikes = async (postId, likesCount) => {
   }
 };
 
+export const updatePost = async (postId, newText) => {
+  try {
+    const postRef = doc(db, 'posts', postId);
+    await updateDoc(postRef, { textoPost: newText });
+    console.log('Post updated successfully:', newText);
+  } catch (error) {
+    console.error('Error updating post:', error);
+  }
+};

@@ -1,4 +1,4 @@
-import { createPost, getPosts, deletePost, updateLikes } from '../../../configurafirebase/configfirestore.js';
+import { createPost, getPosts, deletePost, updateLikes, updatePost } from '../../../configurafirebase/configfirestore.js';
 import { userStateLogout, userStateChanged } from '../../../configurafirebase/exports.js';
 
 export default async () => {
@@ -19,11 +19,10 @@ export default async () => {
   const textoPost = container.querySelector('#textstory');
   const postArea = container.querySelector('#postcontainer');
 
-  botaoSair.addEventListener('click', deslogar);
-  async function deslogar() {
+  botaoSair.addEventListener('click', () => {
     console.log('deslogar');
     userStateLogout(userStateChanged);
-  }
+  });
 
   botaoPostar.addEventListener('click', postar);
   async function postar() {
@@ -33,6 +32,7 @@ export default async () => {
     newPost.innerHTML = `
       <h1>${textoPost.value}</h1>
       <button class="delete-btn">Deletar</button>
+      <button class="edit-btn">Editar</button>
       <button class="like-btn">Curtir</button>
       <span class="likes-count">0</span> <!-- Adicione a contagem inicial de curtidas -->
     `;
@@ -48,6 +48,7 @@ export default async () => {
       postElement.innerHTML = `
         <h1>${post.textoPost}</h1>
         <button class="delete-btn" data-postid="${post.id}">Deletar</button>
+        <button class="edit-btn">Editar</button>
         <button class="like-btn">Curtir</button>
         <span class="likes-count">${post.likes}</span> <!-- Exiba a contagem de curtidas -->
       `;
@@ -67,6 +68,18 @@ export default async () => {
         likesCount += 1;
         likesCountElement.textContent = likesCount.toString();
         console.log('Likes updated successfully:', likesCount);
+      });
+
+      const editButton = postElement.querySelector('.edit-btn');
+      editButton.addEventListener('click', () => {
+        const postId = post.id;
+        const editedText = prompt('Digite o novo texto do post:');
+        if (editedText) {
+          // Atualize o post no Firestore
+          updatePost(postId, editedText);
+          // Atualize o texto exibido no elemento HTML
+          postElement.querySelector('h1').textContent = editedText;
+        }
       });
     });
   }
