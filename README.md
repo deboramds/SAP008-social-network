@@ -91,7 +91,7 @@ Foi desenvolvido um protótipo de alta fidelidade para a interface da Guest Star
 ![Guest Star Supernova](src/imagem/Prototipo-alta-fidelidade.png)
 
 
-A paleta de cores:
+A paleta de cores foi pensada afim de criar uma identidade visual:
 
 ![Paleta de cores ](src/imagem/paleta-de-cores.png)
 
@@ -125,47 +125,47 @@ Agradecemos a todos os colaboradores que contribuíram para o desenvolvimento de
 
 ## 5. Configuração do projeto
 
-* Para configurar corretamente o projeto, siga as instruções abaixo:
+1. Para configurar corretamente o projeto, siga as instruções abaixo:
 
-* Clone este repositório para o seu ambiente local.
+2. Clone este repositório para o seu ambiente local.
 
-*  Abra o terminal e navegue até o diretório raiz do projeto.
+3. Abra o terminal e navegue até o diretório raiz do projeto.
 
-* Execute o seguinte comando para instalar as dependências necessárias:
+4. Execute o seguinte comando para instalar as dependências necessárias:
 
-* Copy code
+5. Copy code
 
-* npm install
+6. npm install
 
-* Crie um arquivo .env na raiz do projeto e defina as seguintes variáveis de ambiente:
+ Crie um arquivo .env na raiz do projeto e defina as seguintes variáveis de ambiente:
 
-* makefile
+1. makefile
 
-* Copy code
+2. Copy code
 
-* PORT=3000
+3. PORT=3000
 
-* DB_URL=your_database_url
+4.  DB_URL=your_database_url
 
-* GOOGLE_CLIENT_ID=your_google_client_id
+5. GOOGLE_CLIENT_ID=your_google_client_id
 
-* GOOGLE_CLIENT_SECRET=your_google_client_secret
+6. GOOGLE_CLIENT_SECRET=your_google_client_secret
 
-* PORT: A porta em que o servidor será executado localmente (padrão: 3000).
+7. PORT: A porta em que o servidor será executado localmente (padrão: 3000).
 
-* DB_URL: A URL de conexão do seu banco de dados.
+8. DB_URL: A URL de conexão do seu banco de dados.
 
-* GOOGLE_CLIENT_ID e GOOGLE_CLIENT_SECRET: As credenciais da API do Google para autenticação.
+9. GOOGLE_CLIENT_ID e GOOGLE_CLIENT_SECRET: As credenciais da API do Google para autenticação.
 
 Execute o seguinte comando para iniciar o servidor:
 
-* sql
+1. sql
 
-* Copy code
+2. Copy code
 
-* npm start
+3. npm start
 
-* O servidor será iniciado e estará disponível em http://localhost:3000 (ou a porta definida no arquivo .env).
+4. O servidor será iniciado e estará disponível em http://localhost:3000 (ou a porta definida no arquivo .env).
 
 ## 6. Próximos passos e implementações futuras
 

@@ -1,21 +1,90 @@
-*{
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container-feed{
-    width: 100%;
-    height: 100vh;
-    background-color: #331E38;
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  .input-post {
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px 0 10px 0;
-  }
+body { 
+background-color: #331E38;
+}
 
-#textstory{
-    width: 500px;
-    height: 150px;
+.container-feed {
+  padding: 20px;
+  position: relative;
+}
+
+.botao-sair {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.botao-sair button {
+  padding: 5px 10px;
+  background-color: #3A606E;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.input-post {
+  margin-bottom: 20px;
+  padding: 50px;
+  margin: 10px;
+}
+
+textarea {
+  width: 65%;
+  height: 30px;
+  resize: none;
+  padding: 5px;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #3A606E;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#postcontainer {
+  margin-top: 20px;
+}
+
+.post-item {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.delete-btn,
+.like-btn {
+  background-color: #3A606E;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#postcontainer {
+  width: 65%;
+  color: #fff;
+  background-color: #4C2E50  ;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px; 
 }

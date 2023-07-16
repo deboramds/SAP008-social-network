@@ -4,15 +4,18 @@ import { userStateLogout, userStateChanged } from '../../../configurafirebase/ex
 export default async () => {
   const container = document.createElement('div');
   const template = `
-    <div class="container-feed">
-      <div class="input-post">
-        <textarea id="textstory" placeholder="escreva seu post"></textarea>
-        <button id="submit">Postar</button>
+  <div class="container-feed">
+  <div class="botao-sair">
+ <button id="logout">sair</button>
+ </div>
+    <div class="input-post">
+      <textarea id="textstory" placeholder="escreva seu post"></textarea>
+      <button id="submit">Postar</button>
       </div> 
-      <button id="logout">sair</button>
-      <div id="postcontainer"></div>
-    </div>
-  `;
+      
+    <div id="postcontainer"></div>
+  </div>
+`;
   container.innerHTML = template;
   const botaoSair = container.querySelector('#logout');
   const botaoPostar = container.querySelector('#submit');
