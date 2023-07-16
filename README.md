@@ -1,3 +1,10 @@
+
+
+
+# [link do projeto](https://deboramds.github.io/SAP008-social-network/src/index.html)
+
+
+
 # Criando uma Rede Social
 
 ## Índice
@@ -24,6 +31,7 @@ O objetivo principal de aprendizagem deste projeto foi construir uma Single-page
 
 
 ## 2. Sobre a Guest Star Supernova
+
 Guest Star Supernova
 
 Este é um projeto de uma rede social para amantes do rock chamada Guest Star Supernova, construída como uma aplicação de página única (SPA) utilizando JavaScript, HTML e CSS. A plataforma é um espaço virtual vibrante onde artistas, músicos e entusiastas do rock podem se reunir, compartilhar suas músicas, vídeos e informações, além de interagir com uma comunidade apaixonada pelo rock.
@@ -61,7 +69,10 @@ Os usuários podem participar de fóruns de discussão, debates e análises sobr
 É possível comentar e compartilhar publicações de outros membros, descobrir novas bandas e artistas promissores.
 Protótipo de alta fidelidade
 Foi desenvolvido um protótipo de alta fidelidade para a interface da Guest Star Supernova usando a ferramenta Figma.
-O protótipo pode ser visualizado neste link.
+
+![Guest Star Supernova](src/imagem/Prototipo-alta-fidelidade.png)
+
+
 A paleta de cores utilizada no design é composta por tons de preto, cinza, branco e detalhes em vermelho, para transmitir uma estética rock'n'roll.
 
 ## 3. Colaboradores do projeto
