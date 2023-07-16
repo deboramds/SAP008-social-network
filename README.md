@@ -204,7 +204,7 @@ Email: deborah.mart@hotmail.com
 Agradecemos por usar a Guest Star Supernova e esperamos que você desfrute da experiência em nossa rede social voltada 
 para amantes do rock. Juntos, vamos reacender a chama do rock e celebrar essa forma de expressão poderosa!
 
-Let's rock! &#x1F918;
+Let's rock! :metal:
 
 
 
