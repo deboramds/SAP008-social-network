@@ -1,5 +1,4 @@
 import {
-  // eslint-disable-next-line max-len
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -8,22 +7,9 @@ import {
   updateProfile,
   signOut,
   onAuthStateChanged,
-} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'; // eslint-disable-line import/no-unresolved
+} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 
 import { app } from './configfirebase.js';
-
-// export {
-//   signInWithEmailAndPassword,
-//   createUserWithEmailAndPassword,
-//   getAuth,
-//   signInWithPopup,
-//   GoogleAuthProvider,
-//   updateProfile,
-//   signOut,
-//   onAuthStateChanged,
-// // eslint-disable-next-line import/no-unresolved
-// } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
-
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
@@ -34,26 +20,41 @@ export function createUser(name, email, senha) {
       displayName: name,
     }));
 }
+
 export function loginEmailPassword(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
+
 export function signInGoogle() {
   return signInWithPopup(auth, provider);
 }
+
 export function signOutUser() {
   return signOut(auth);
 }
 
 export function userStateChanged(callback) {
- // const auth = getAuth(app);
   onAuthStateChanged(auth, callback);
 }
 
 export function userStateLogout() {
-  const authentication = getAuth();
-  signOut(authentication)
+  signOutUser()
     .then(() => {
+      // Lógica adicional após o logout
     })
     .catch(() => {
+      // Tratamento de erro
     });
 }
+
+export const getCurrentUser = () => {
+  const currentUser = auth.currentUser;
+  if (currentUser) {
+    return {
+      email: currentUser.email,
+      displayName: currentUser.displayName,
+    };
+  } else {
+    return null;
+  }
+};

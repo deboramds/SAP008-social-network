@@ -7,10 +7,11 @@ export const loginUser = (email, password) => {
   // Implementação da função loginUser
 };
 
-export const createPost = async (textoPost) => {
+export const createPost = async (textoPost, userName) => {
   try {
     const docRef = await addDoc(collection(db, 'posts'), {
       textoPost: textoPost,
+      userName: userName,
       likes: 0 // Adicionando o campo "likes" com valor inicial de 0
     });
     console.log('Document written with ID: ', docRef.id);

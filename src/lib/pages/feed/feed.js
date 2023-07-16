@@ -1,21 +1,20 @@
 import { createPost, getPosts, deletePost, updateLikes, updatePost } from '../../../configurafirebase/configfirestore.js';
-import { userStateLogout, userStateChanged } from '../../../configurafirebase/exports.js';
+import { userStateLogout, userStateChanged, getCurrentUser } from '../../../configurafirebase/exports.js';
 
 export default async () => {
   const container = document.createElement('div');
   const template = `
-  <div class="container-feed">
-  <div class="botao-sair">
- <button id="logout">sair</button>
- </div>
-    <div class="input-post">
-      <textarea id="textstory" placeholder="escreva seu post"></textarea>
-      <button id="submit">Postar</button>
+    <div class="container-feed">
+      <div class="botao-sair">
+        <button id="logout">sair</button>
+      </div>
+      <div class="input-post">
+        <textarea id="textstory" placeholder="escreva seu post"></textarea>
+        <button id="submit">Postar</button>
       </div> 
-      
-    <div id="postcontainer"></div>
-  </div>
-`;
+      <div id="postcontainer"></div>
+    </div>
+  `;
   container.innerHTML = template;
   const botaoSair = container.querySelector('#logout');
   const botaoPostar = container.querySelector('#submit');
@@ -27,13 +26,14 @@ export default async () => {
     userStateLogout(userStateChanged);
   });
 
-  botaoPostar.addEventListener('click', postar);
-  async function postar() {
+  botaoPostar.addEventListener('click', async () => {
     console.log(textoPost.value);
-    await createPost(textoPost.value);
+    const currentUser = getCurrentUser();
+    await createPost(textoPost.value, currentUser.email);
     const newPost = document.createElement('div');
     newPost.innerHTML = `
       <h1>${textoPost.value}</h1>
+      <p>Postado por: ${currentUser.email}</p>
       <button class="delete-btn">Deletar</button>
       <button class="edit-btn">Editar</button>
       <button class="like-btn">Curtir</button>
@@ -41,7 +41,7 @@ export default async () => {
     `;
     postArea.appendChild(newPost);
     textoPost.value = '';
-  }
+  });
 
   const posts = await getPosts();
   console.log(posts);
@@ -50,6 +50,7 @@ export default async () => {
       const postElement = document.createElement('div');
       postElement.innerHTML = `
         <h1>${post.textoPost}</h1>
+        <p>Postado por: ${post.userName}</p>
         <button class="delete-btn" data-postid="${post.id}">Deletar</button>
         <button class="edit-btn">Editar</button>
         <button class="like-btn">Curtir</button>
