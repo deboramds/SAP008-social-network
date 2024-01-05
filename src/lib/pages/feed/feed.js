@@ -5,6 +5,13 @@ export default async () => {
   const container = document.createElement('div');
   const template = `
     <div class="container-feed">
+    <div className="container-right">
+    <div className="container-right">
+      <figure>
+
+      </figure>
+    </div>
+
       <div class="botao-sair">
         <button id="logout">sair</button>
       </div>
@@ -12,7 +19,10 @@ export default async () => {
         <textarea id="textstory" placeholder="escreva seu post"></textarea>
         <button id="submit">Postar</button>
       </div> 
+
       <div id="postcontainer"></div>
+     
+    
     </div>
   `;
   container.innerHTML = template;

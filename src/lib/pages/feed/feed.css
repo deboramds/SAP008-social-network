@@ -88,3 +88,10 @@ h1 {
   flex-direction: column;
   gap: 30px; 
 }
+
+
+.container-right {
+  background-image: url(src\imagem\logo.png);
+  height: 30px;
+  height: 30px;
+}

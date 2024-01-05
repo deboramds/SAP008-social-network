@@ -1,0 +1,10 @@
+* {
+}
+
+
+.container-about {
+    width: 600px;
+    height: 50%;
+    color: aliceblue;
+    word-wrap: break-word;
+}
